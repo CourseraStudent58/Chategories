@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/success.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+<div class="formwrapper">
+  <h2 class="title">Categories</h2>
+  <form method="POST" action="">
+     <table>
+          <tr>
+              <th>Category</th>
+              <th>Active</th>
+          </tr>
+
+
+      {% for item in form.items %}
+        <tr>
+            <td>{{ item['category'](size=75) }} </td>
+            <td>{{ item['active'] }}</td>
+        </tr>
+
+     {%endfor%}
+
+     </table>
+
+      {{ form.submit }}
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>{{title}}</h1>
+        <p>{{description}}</p>
+    </div>
+    <div class=""container">
+    <p>CPaaS Status is {{setupStatus}}</p>
+    <p>Menu Status is {{menuStatus}}</p>
+    </div>
+    <hr>
+    <h2>References</h2>
+    <div>
+        Coding examples and snippets from:
+        <li>https://github.com/hackersandslackers/flask-wtform-tutorial</li>
+        <li>https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iii-web-forms</li>
+        <li>https://stackoverflow.com/questions/29504067/render-an-editable-table-using-flask-jinja2-templates-then-process-the-form-da</li>
+    </div>
+{% endblock %}
